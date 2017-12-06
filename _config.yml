@@ -62,8 +62,13 @@ paginate_path:         /page-:num/
 # ========================================================================================
 
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
-accent_color:          '#4fb1ba'
+#accent_image:          /assets/img/sidebar-bg.jpg
+accent_color:          '#688262'
+
+accent_image:
+  particles: true
+  background: '#060c05' # provide a valid CSS background value
+  overlay: true # set to true if you want a dark overlay
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://qwtel.com/hydejack/docs/configuration/>

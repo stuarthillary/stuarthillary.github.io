@@ -1,13 +1,19 @@
 <hy-drawer>
   <header id="_sidebar" class="sidebar" role="banner">
-    {% if image.background %}
+    {% if image.particles %}
+	  {% capture bg_id %}sidebarwithparticles{% endcapture %}
+	  {% capture bg_style %}background:{{ image.background }}{% endcapture %}
+	  {% capture bg_class %}sidebar-bg {% if image.overlay %}sidebar-overlay{% endif %}{% endcapture %}
+    {% else if image.background %}  
+	  {% capture bg_id %}sidebar{% endcapture %}
       {% capture bg_style %}background:{{ image.background }}{% endcapture %}
       {% capture bg_class %}sidebar-bg {% if image.overlay %}sidebar-overlay{% endif %}{% endcapture %}
-    {% else %}
+	{% else %}
+	  {% capture bg_id %}sidebar{% endcapture %}
       {% capture bg_style %}background-color:{{ color }};{% if image != 'none' %}background-image:url({% include smart-url url=image %}){% endif %}{% endcapture %}
       {% capture bg_class %}sidebar-bg {% if image != 'none' %}sidebar-overlay{% endif %}{% endcapture %}
     {% endif %}
-    <div class="{{ bg_class }}" style="{{ bg_style }}"></div>
+    <div id="{{ bg_id }}" class="{{ bg_class }}" style="{{ bg_style }}"></div>
 
     <div class="sidebar-sticky">
       <div class="sidebar-about">
