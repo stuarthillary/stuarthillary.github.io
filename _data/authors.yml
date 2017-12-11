@@ -8,11 +8,10 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    Open `_data/authors.yml` to edit this text.
+    I am a software developer based in Birmingham, UK.
+    I gained a Ph.D. in Theoretical Physics at the University of Birmingham before moving into software development in the fields of 
+    simulation and Operational Research. I currently work at [SMT](https://www.smartmt.com) on MASTA,
+    which is a CAE software suite for the design, simulation & analysis of driveline systems.
 
   # This photo will be used in the about section
   picture:
