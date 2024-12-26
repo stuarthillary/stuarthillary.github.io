@@ -27,8 +27,8 @@ gem "minimal-mistakes-jekyll"
 # If you have any other plugins, put them here!
 # Cf. https://jekyllrb.com/docs/plugins/installation/
 group :jekyll_plugins do
-  gem "jekyll", "~> 4.0"
+  gem "jekyll"
   gem "jektex"
-  gem "jekyll-scholar", '~> 7.1.3'
+  gem "jekyll-scholar"
   gem "jemoji"
 end
