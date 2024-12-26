@@ -9,7 +9,8 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-gem "github-pages", group: :jekyll_plugins
+# gem "jekyll", '~> 3.9'
+# gem "github-pages", group: :jekyll_plugins
 
 # To upgrade, run `bundle update`.
 
@@ -26,5 +27,8 @@ gem "minimal-mistakes-jekyll"
 # If you have any other plugins, put them here!
 # Cf. https://jekyllrb.com/docs/plugins/installation/
 group :jekyll_plugins do
+  gem "jekyll", "~> 4.0"
   gem "jektex"
+  gem "jekyll-scholar", '~> 7.1.3'
+  gem "jemoji"
 end
