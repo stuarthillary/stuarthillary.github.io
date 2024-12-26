@@ -1,0 +1,459 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>dotnet conf 2024 notes - Veritas ex Simulacra</title>
+<meta name="description" content="Notes on dotnet conf 2024 which took place between 12th Nov - 15th Nov 2024.    What’s new in C# 13   Video  Presented by Mads Torgensen (Architect at Microsoft and lead designer of C#) and Dustin Campbell (architect on .NET tooling and member of C# language design team).  learn.microsoft.com  What’s new in the .NET Runtime, Libraries, &amp; SDK   Video  MVVM Building Blocks for WinUI and WPF Development   Video  C#’s Best features you might not be using   Video  Boosting WPF Performance - Upcoming Improvements   Video  Performance Improvements in .NET 9   Video  Smart UI Powered by AI   Video  Building the Foundation: AI Fundamantals in .NET   Video  Modern WinForms Development with .NET 9   Video  Navigating the world of AI Models in .NET   Video  Building AI Applications from Scratch: A Hands-On Guide for .NET Developers   Video  Embedding Python libraries in .NET services and applications   Video  Modernising Legacy .NET Codebases with NDepend   Video  Empowering WPF Developers - WPF in .NET 9   Video  Audit Like a Pro: Securing Your NuGet Packages   Video  Deep dive on native AOT   Video  F# - Nullable Reference Types   Video  Advanced Pattern Matching in C#   Video  C# Source Generators Boost Productivity in the Rx.NET Repo   Video  Modernizing .NET Apps with Upgrade Assistant   Video  Master Visual Studio Debugging: Tips, Tricks, and AI Insights!   Video  Community Toolkit Roundup   Video  dotnet CLI all the things!   Video  C++ Interoperability Within .NET   Video  Cross-Platform Magic: Transforming WPF Apps with Avalonia XPF   Video  Unpacking the Newest in NuGet   Video">
+
+
+  <meta name="author" content="Stuart Hillary">
+  
+  <meta property="article:author" content="Stuart Hillary">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Veritas ex Simulacra">
+<meta property="og:title" content="dotnet conf 2024 notes">
+<meta property="og:url" content="https://stuarthillary.github.io/blog/dotnet-conf-2024/">
+
+
+  <meta property="og:description" content="Notes on dotnet conf 2024 which took place between 12th Nov - 15th Nov 2024.    What’s new in C# 13   Video  Presented by Mads Torgensen (Architect at Microsoft and lead designer of C#) and Dustin Campbell (architect on .NET tooling and member of C# language design team).  learn.microsoft.com  What’s new in the .NET Runtime, Libraries, &amp; SDK   Video  MVVM Building Blocks for WinUI and WPF Development   Video  C#’s Best features you might not be using   Video  Boosting WPF Performance - Upcoming Improvements   Video  Performance Improvements in .NET 9   Video  Smart UI Powered by AI   Video  Building the Foundation: AI Fundamantals in .NET   Video  Modern WinForms Development with .NET 9   Video  Navigating the world of AI Models in .NET   Video  Building AI Applications from Scratch: A Hands-On Guide for .NET Developers   Video  Embedding Python libraries in .NET services and applications   Video  Modernising Legacy .NET Codebases with NDepend   Video  Empowering WPF Developers - WPF in .NET 9   Video  Audit Like a Pro: Securing Your NuGet Packages   Video  Deep dive on native AOT   Video  F# - Nullable Reference Types   Video  Advanced Pattern Matching in C#   Video  C# Source Generators Boost Productivity in the Rx.NET Repo   Video  Modernizing .NET Apps with Upgrade Assistant   Video  Master Visual Studio Debugging: Tips, Tricks, and AI Insights!   Video  Community Toolkit Roundup   Video  dotnet CLI all the things!   Video  C++ Interoperability Within .NET   Video  Cross-Platform Magic: Transforming WPF Apps with Avalonia XPF   Video  Unpacking the Newest in NuGet   Video">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-11-17T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://stuarthillary.github.io/blog/dotnet-conf-2024/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Veritas ex Simulacra Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/katex.min.css" />
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Veritas ex Simulacra
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="dotnet conf 2024 notes">
+    <meta itemprop="description" content="Notes on dotnet conf 2024 which took place between 12th Nov - 15th Nov 2024.What’s new in C# 13 VideoPresented by Mads Torgensen (Architect at Microsoft and lead designer of C#) and Dustin Campbell (architect on .NET tooling and member of C# language design team).learn.microsoft.comWhat’s new in the .NET Runtime, Libraries, &amp; SDK VideoMVVM Building Blocks for WinUI and WPF Development VideoC#’s Best features you might not be using VideoBoosting WPF Performance - Upcoming Improvements VideoPerformance Improvements in .NET 9 VideoSmart UI Powered by AI VideoBuilding the Foundation: AI Fundamantals in .NET VideoModern WinForms Development with .NET 9 VideoNavigating the world of AI Models in .NET VideoBuilding AI Applications from Scratch: A Hands-On Guide for .NET Developers VideoEmbedding Python libraries in .NET services and applications VideoModernising Legacy .NET Codebases with NDepend VideoEmpowering WPF Developers - WPF in .NET 9 VideoAudit Like a Pro: Securing Your NuGet Packages VideoDeep dive on native AOT VideoF# - Nullable Reference Types VideoAdvanced Pattern Matching in C# VideoC# Source Generators Boost Productivity in the Rx.NET Repo VideoModernizing .NET Apps with Upgrade Assistant VideoMaster Visual Studio Debugging: Tips, Tricks, and AI Insights! VideoCommunity Toolkit Roundup Videodotnet CLI all the things! VideoC++ Interoperability Within .NET VideoCross-Platform Magic: Transforming WPF Apps with Avalonia XPF VideoUnpacking the Newest in NuGet Video">
+    <meta itemprop="datePublished" content="2024-11-17T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://stuarthillary.github.io/blog/dotnet-conf-2024/" itemprop="url">dotnet conf 2024 notes
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Notes on dotnet conf 2024 which took place between 12th Nov - 15th Nov 2024.</p>
+
+<!-- more -->
+
+<h2 id="whats-new-in-c-13">What’s new in C# 13</h2>
+
+<p><a href="https://www.youtube.com/watch?v=japXYFS9YPQ"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<p>Presented by Mads Torgensen (Architect at Microsoft and lead designer of C#) and Dustin Campbell (architect on .NET tooling and member of C# language design team).</p>
+
+<p><a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-13">learn.microsoft.com</a></p>
+
+<h2 id="whats-new-in-the-net-runtime-libraries--sdk">What’s new in the .NET Runtime, Libraries, &amp; SDK</h2>
+
+<p><a href="https://www.youtube.com/watch?v=4iEqqPZKDC0"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="mvvm-building-blocks-for-winui-and-wpf-development">MVVM Building Blocks for WinUI and WPF Development</h2>
+
+<p><a href="https://www.youtube.com/watch?v=83UVWrfYreU"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="cs-best-features-you-might-not-be-using">C#’s Best features you might not be using</h2>
+
+<p><a href="https://www.youtube.com/watch?v=yuXw7oj0Bg0"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="boosting-wpf-performance---upcoming-improvements">Boosting WPF Performance - Upcoming Improvements</h2>
+
+<p><a href="https://www.youtube.com/watch?v=U_dwd0FbhkA"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="performance-improvements-in-net-9">Performance Improvements in .NET 9</h2>
+
+<p><a href="https://www.youtube.com/watch?v=aLQpnpSxosg"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="smart-ui-powered-by-ai">Smart UI Powered by AI</h2>
+
+<p><a href="https://www.youtube.com/watch?v=h7TfnK6HHkY"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="building-the-foundation-ai-fundamantals-in-net">Building the Foundation: AI Fundamantals in .NET</h2>
+
+<p><a href="https://www.youtube.com/watch?v=MdM8G2e7jOg"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="modern-winforms-development-with-net-9">Modern WinForms Development with .NET 9</h2>
+
+<p><a href="https://www.youtube.com/watch?v=1ZjCGdmQl_g"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="navigating-the-world-of-ai-models-in-net">Navigating the world of AI Models in .NET</h2>
+
+<p><a href="https://www.youtube.com/watch?v=GE0u0VduTmw"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="building-ai-applications-from-scratch-a-hands-on-guide-for-net-developers">Building AI Applications from Scratch: A Hands-On Guide for .NET Developers</h2>
+
+<p><a href="https://www.youtube.com/watch?v=7Rw_ciSh2Wk"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="embedding-python-libraries-in-net-services-and-applications">Embedding Python libraries in .NET services and applications</h2>
+
+<p><a href="https://www.youtube.com/watch?v=Dk-MPeSxv18"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="modernising-legacy-net-codebases-with-ndepend">Modernising Legacy .NET Codebases with NDepend</h2>
+
+<p><a href="https://www.youtube.com/watch?v=7Qm-6tFSd4Y"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="empowering-wpf-developers---wpf-in-net-9">Empowering WPF Developers - WPF in .NET 9</h2>
+
+<p><a href="https://www.youtube.com/watch?v=4cHurZiAcSg"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="audit-like-a-pro-securing-your-nuget-packages">Audit Like a Pro: Securing Your NuGet Packages</h2>
+
+<p><a href="https://www.youtube.com/watch?v=Nw9ouFSiMjk"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="deep-dive-on-native-aot">Deep dive on native AOT</h2>
+
+<p><a href="https://www.youtube.com/watch?v=Gmn-4mVSjq4"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="f---nullable-reference-types">F# - Nullable Reference Types</h2>
+
+<p><a href="https://www.youtube.com/watch?v=MPHzwVWKruk"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="advanced-pattern-matching-in-c">Advanced Pattern Matching in C#</h2>
+
+<p><a href="https://www.youtube.com/watch?v=W-f9MHB-5TQ"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="c-source-generators-boost-productivity-in-the-rxnet-repo">C# Source Generators Boost Productivity in the Rx.NET Repo</h2>
+
+<p><a href="https://www.youtube.com/watch?v=WNbTp7iesEY"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="modernizing-net-apps-with-upgrade-assistant">Modernizing .NET Apps with Upgrade Assistant</h2>
+
+<p><a href="https://www.youtube.com/watch?v=j0y4x9hJcgQ"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="master-visual-studio-debugging-tips-tricks-and-ai-insights">Master Visual Studio Debugging: Tips, Tricks, and AI Insights!</h2>
+
+<p><a href="https://www.youtube.com/watch?v=UN5RyppuT6c"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="community-toolkit-roundup">Community Toolkit Roundup</h2>
+
+<p><a href="https://www.youtube.com/watch?v=jDnUxM85K5Q"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="dotnet-cli-all-the-things">dotnet CLI all the things!</h2>
+
+<p><a href="https://www.youtube.com/watch?v=r1TBZeVgJmU"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="c-interoperability-within-net">C++ Interoperability Within .NET</h2>
+
+<p><a href="https://www.youtube.com/watch?v=udIEiCAn15E"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="cross-platform-magic-transforming-wpf-apps-with-avalonia-xpf">Cross-Platform Magic: Transforming WPF Apps with Avalonia XPF</h2>
+
+<p><a href="https://www.youtube.com/watch?v=v2YnWgiNqL0"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+<h2 id="unpacking-the-newest-in-nuget">Unpacking the Newest in NuGet</h2>
+
+<p><a href="https://www.youtube.com/watch?v=uljRikE6uTU"><i class="fa-brands fa-youtube"> Video</i></a></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#dotnet" class="page__taxonomy-item p-category" rel="tag">dotnet</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-11-17T00:00:00+00:00">November 17, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!">Previous</a>
+    
+    
+      <a href="/blog/actor-model/" class="pagination--pager" title="The Actor Programming Model">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/stujitsu.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/stuarthillary" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/stuart-h-299787113/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 <a href="https://stuarthillary.github.io">Veritas ex Simulacra</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
