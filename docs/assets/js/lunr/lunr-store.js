@@ -76,4 +76,10 @@ var store = [{
         "tags": [],
         "url": "/jekyll/update/test-post/",
         "teaser": null
+      },{
+        "title": "Git Notes",
+        "excerpt":"Notes on useful git commands and tips on working with GitHub.     Delete a remote branch on GitHub   git push -d &lt;remote_name&gt; &lt;branchname&gt;  ","categories": ["git"],
+        "tags": [],
+        "url": "/git/git-notes/",
+        "teaser": null
       }]
